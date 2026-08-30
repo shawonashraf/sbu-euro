@@ -1,3 +1,4 @@
+use figlet_rs::FIGlet;
 use std::env;
 use std::io::{self, BufRead, Write};
 
@@ -7,16 +8,11 @@ fn sbu_to_euro(sbus: f32) -> f32 {
     sbus * RATE
 }
 
-const BANNER: &str = r#"
-  .   ____  ____  _   _  ____    _   _ ___  ____  ___ _____
- /|\ / ___)(  _ \( \_/ )(  _ \  ( \_/ ) __)(  _ \/ __|_   _)
-(===)\___ \ ) __/ ) _ (  ) __/  ) _ ( ) _)  )   /\__ \ | |
- \|/ (___/ (_)   (_) (_)(_)    (_) (_)(___)(_)\_)(___/ |_|
- :: SBU to Euro Converter ::              (v0.1.0)
-"#;
-
 fn print_banner() {
-    println!("\x1b[32m{BANNER}\x1b[0m");
+    let font = FIGlet::standard().unwrap();
+    let art = font.convert("SBU-EUR").unwrap();
+    println!("\x1b[32m{art}\x1b[0m");
+    println!("\x1b[32m :: SBU to Euro Converter ::              (v0.1.0)\x1b[0m");
 }
 
 fn print_conversion(sbus: f32) {
