@@ -7,7 +7,7 @@ So, how to put it then .... this project is the aftermath of a fun conversation 
 
 ```bash
 # make sure to have cmake (>= 3.16) and a C++20 compiler installed
-git clone --recurse-submodules <repo-url>
+git clone --recurse-submodules https://github.com/shawonashraf/sbu-euro.git
 cd sbu-euro
 cmake -S . -B build
 cmake --build build
