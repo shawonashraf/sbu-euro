@@ -6,8 +6,18 @@ So, how to put it then .... this project is the aftermath of a fun conversation 
 ## running locally
 
 ```bash
-# make sure to have rust installed
-cargo run
+# make sure to have cmake (>= 3.16) and a C++20 compiler installed
+git clone --recurse-submodules <repo-url>
+cd sbu-euro
+cmake -S . -B build
+cmake --build build
+./build/sbu-euro
+```
+
+## tests
+
+```bash
+ctest --test-dir build
 ```
 
 ## screenshot
