@@ -5,9 +5,9 @@
 #include <string>
 
 namespace {
-constexpr float kRate = 0.017f;
-constexpr std::string_view kWhitespace = " \t\n\r\v\f";
-}  // namespace
+    constexpr float kRate = 0.017f;
+    constexpr std::string_view kWhitespace = " \t\n\r\v\f";
+} // namespace
 
 float sbuToEuro(float sbus) {
     return sbus * kRate;
@@ -24,7 +24,7 @@ std::optional<float> parseSbu(std::string_view raw) {
     const std::string buf(trim(raw));
     if (buf.empty()) return std::nullopt;
 
-    char* end = nullptr;
+    char *end = nullptr;
     const double value = std::strtod(buf.c_str(), &end);
     if (end != buf.c_str() + buf.size()) return std::nullopt;
 
